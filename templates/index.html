@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<style>
+  body{background-color: antiquewhite;
+       align-content: center;
+       margin: auto;
+       width: 50%;
+       padding: 10px;
+       color: green;
+      }
+  h1{
+     color: red;
+     line-height: 24px;
+     padding-top: 22%;
+    }
+  p{
+    color: salmon;
+   }
+    
+</style>
+</head>
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+  <br>
+  <br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"class="form-inline" method="post">
+        <input type="text" class="form-control mb-2 mr-sm-2" name="experience" placeholder="Experience" required="required" />
+        <input type="text" class="form-control mb-2 mr-sm-2" name="test_score" placeholder="Test Score" required="required" />
+		<input type="text" class="form-control mb-2 mr-sm-2" name="interview_score" placeholder="Interview Score" required="required" />
+        <button type="submit" class="btn btn-primary mb-2">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</html>
